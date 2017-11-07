@@ -4,7 +4,7 @@
 ## Everhart, S.E. (2017). Population structure and phenotypic variation of
 ## _Sclerotinia sclerotiorum_ from dry bean in the United States PeerJ XXX
 ##
-## package versions here are locked to those present on 2017-09-30
+## package versions here are locked to those present in version 3.4.2
 ##
 ## Note: this Dockerfile was modified from
 ## https://github.com/NESCent/popgen-docker/blob/193387d3f1e5484ef8a1ddf6d66cfca64ccd40d7/Rpopgen/Dockerfile
@@ -21,7 +21,7 @@ MAINTAINER Zhian Kamvar <zkamvar@gmail.com>
 # ARG DEBIAN_FRONTEND=noninteractive
 
 ## Copy the current directory to /analysis
-COPY . /analysis
+COPY DESCRIPTION /analysis/DESCRIPTION
 
 # ggforce requires units which required udunits2
 RUN apt-get update \
