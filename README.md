@@ -6,6 +6,9 @@ Note that this container does not contain any of the code or data from Kamvar et
 it is simply the computational environment for the code. The code and data can be found
 at https://github.com/everhartlab/sclerotinia-366 or on the Open Science Framework at
 https://osf.io/ejb5y/ (github is easier to browse, but the OSF project is more permanent).
+All versions of the container are synced on Docker hub: 
+https://hub.docker.com/r/zkamvar/sclerotinia-366-dependencies/
+
 
 ## Running the container
 
