@@ -32,5 +32,5 @@ RUN apt-get update \
 RUN . /etc/environment \
 && mkdir /analysis \
 && wget -O - https://raw.githubusercontent.com/everhartlab/sclerotinia-366/review-one/DESCRIPTION > /analysis/DESCRIPTION \
-&& R -e "devtools::install('/analysis', dep=TRUE, repos='$MRAN'); devtools::install('/analysis', dep=TRUE, repos='$MRAN')"
+&& R -e "devtools::install('/analysis', keep_source=TRUE, args='--install-tests', dependencies=TRUE, repos='$MRAN')"
 
