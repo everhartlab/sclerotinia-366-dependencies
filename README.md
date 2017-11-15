@@ -7,7 +7,7 @@ it is simply the computational environment for the code. The code and data can b
 at https://github.com/everhartlab/sclerotinia-366 or on the Open Science Framework at
 https://osf.io/ejb5y/ (github is easier to browse, but the OSF project is more permanent).
 All versions of the container are synced on Docker hub: 
-https://hub.docker.com/r/zkamvar/sclerotinia-366-dependencies/
+https://hub.docker.com/r/everhartlab/sclerotinia-366-dependencies/
 
 
 ## Running the container
@@ -16,7 +16,7 @@ The image can be run via the command line. Docker will automatically install the
 for you. 
 
 ```
-it=$(docker run -dp 8787:8787 -e ROOT=TRUE zkamvar/sclerotinia-366-dependencies)
+docker run --rm --name ssc-dep -dp 8787:8787 -e ROOT=TRUE everhartlab/sclerotinia-366-dependencies
 ```
 
 After that finishes, you can open your browser to `localhost:8787` and log in with
@@ -27,7 +27,7 @@ After that finishes, you can open your browser to `localhost:8787` and log in wi
 When you are finished, you can stop the container with:
 
 ```
-docker stop $it
+docker stop ssc-dep
 ```
 
 ### Running the analyses
@@ -36,7 +36,7 @@ Kamvar et al. is rebuilt whenever something changes in the code. You can run the
 container that contains all the code and data like so:
 
 ```
-docker run -dp 8787:8787 -e ROOT=TRUE zkamvar/sclerotinia-366
+docker run --rm --name ssc -dp 8787:8787 -e ROOT=TRUE everhartlab/sclerotinia-366
 ```
 
 After you open Rstudio server, you should open the Terminal tab and use 
@@ -49,6 +49,6 @@ If you want to use it to rebuild Kamvar et al. 2017 from scratch , you can do th
 ```
 git clone https://github.com/everhartlab/sclerotinia-366.git
 cd sclerotinia-366
-docker run -dp 8787:8787 -v $(pwd):/home/rstudio/ -e ROOT=TRUE zkamvar/sclerotinia-366-dependencies
+docker run --rm --name ssc-dep -dp 8787:8787 -v $(pwd):/home/rstudio/ -e ROOT=TRUE everhartlab/sclerotinia-366-dependencies
 ```
 
