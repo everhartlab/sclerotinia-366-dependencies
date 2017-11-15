@@ -31,6 +31,6 @@ RUN apt-get update \
 ## https://osf.io/bq47d/download
 RUN . /etc/environment \
 && mkdir /analysis \
-&& wget -O - https://raw.githubusercontent.com/everhartlab/sclerotinia-366/review-one/DESCRIPTION > /analysis/DESCRIPTION \
+&& wget -O - https://osf.io/bq47d/download > /analysis/DESCRIPTION \
 && R -e "devtools::install('/analysis', keep_source=TRUE, args='--install-tests', dependencies=TRUE, repos='$MRAN')"
 
