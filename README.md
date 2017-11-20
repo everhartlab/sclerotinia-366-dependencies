@@ -16,7 +16,7 @@ The image can be run via the command line. Docker will automatically install the
 for you. 
 
 ```
-docker run --rm --name ssc-dep -dp 8787:8787 -e ROOT=TRUE everhartlab/sclerotinia-366-dependencies
+docker run --rm --name ssc-dep -dp 8787:8787 -e ROOT=TRUE everhartlab/sclerotinia-366-dependencies:latest
 ```
 
 After that finishes, you can open your browser to `localhost:8787` and log in with
