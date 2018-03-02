@@ -24,6 +24,20 @@ MAINTAINER Zhian Kamvar <zkamvar@gmail.com>
 RUN apt-get update \
 &&  apt-get install -y libudunits2-dev
 
+# Rocker now uses TinyTex, which is quite stripped down, so we need to install extra packages
+RUN tlmgr install \
+  babel-english \
+  psnfss \
+  lineno \
+  xcolor \
+  preprint \
+  fancyhdr \
+  lastpage \
+  titlesec \
+  enumitem \
+  microtype \
+  lipsum \
+  collection-fontsrecommended
 ## Install population genetics packages from MRAN and GitHub from 2017-09-18
 ## You can find the descriptions of the packages in the DESCRIPTION file
 ## I'm running devtools install twice here to force the github repos to install
