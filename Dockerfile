@@ -23,6 +23,7 @@ MAINTAINER Zhian Kamvar <zkamvar@gmail.com>
 # ggforce requires units which required udunits2
 RUN apt-get update \
 &&  apt-get install -y libudunits2-dev
+&&  apt-get install -y glpk
 
 # Rocker now uses TinyTex, which is quite stripped down, so we need to install extra packages
 RUN tlmgr install \
